@@ -1,4 +1,4 @@
-#!/home/ivvil/Proyectos/klima/.platformio/penv/bin/python
+#!/home/ivvil/Proyectos/klim/.platformio/penv/bin/python
 #-------------------------------------------------------------------------------
 # scripts/readelf.py
 #

@@ -5,6 +5,11 @@
  * then off for one second, repeatedly.
  */
 #include "Arduino.h"
+#include "Wire.h"
+
+const int DataL = 0x20;			// IDE DD0-DD7
+const int DataH = 0x21;			// IDE DD8-DD15
+const int RegSel = 0x22;		// IDE register
 
 #ifndef LED_BUILTIN
 #define LED_BUILTIN 13

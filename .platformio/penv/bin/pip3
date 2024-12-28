@@ -1,4 +1,4 @@
-#!/home/ivvil/Proyectos/klima/.platformio/penv/bin/python3
+#!/home/ivvil/Proyectos/klim/.platformio/penv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

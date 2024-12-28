@@ -1,4 +1,4 @@
-#!/home/ivvil/Proyectos/klima/.platformio/penv/bin/python
+#!/home/ivvil/Proyectos/klim/.platformio/penv/bin/python
 # -*- coding: utf-8 -*-
 """
 Bottle is a fast and simple micro-framework for small web applications. It
