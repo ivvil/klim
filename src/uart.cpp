@@ -11,14 +11,14 @@ void UART::init(uint16_t ubrr) {
   UCSR0B |= (1 << RXEN0) | (1 << TXEN0);
 }
 
-void UART_putc(unsigned char data) {
-  while (!(UCSR0A & (1 >> UDRE0)));
+void UART::putc(unsigned char data) {
+  while (!(UCSR0A & (1 << UDRE0)));
 
   UDR0 = data;
 }
 
-void UART::puts(char* str) {
-  while (*str > 0) {
+void UART::puts(const char* str) {
+  while (*str) {
 	UART::putc(*str++);
   }
 }

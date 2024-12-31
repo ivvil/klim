@@ -9,7 +9,7 @@ public:
   static void init(uint16_t ubrr);
   
   static void putc(unsigned char data);
-  static void puts(char* str);
+  static void puts(const char* str);
 
   static char getc();
   static void getLine(char* buf, uint8_t n);
