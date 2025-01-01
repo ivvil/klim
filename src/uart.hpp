@@ -3,16 +3,17 @@
 
 #include <stdint.h>
 #include <avr/io.h>
+#include <avr/interrupt.h>
 
-class UART {
-public:
-  static void init(uint16_t ubrr);
+namespace UART {
+  void init(uint16_t ubrr);
   
-  static void putc(unsigned char data);
-  static void puts(const char* str);
+  void putc(unsigned char data);
+  void puts(const char* str);
 
-  static char getc();
-  static void getLine(char* buf, uint8_t n);
+  char getc();
+  void getLine(char* buf, uint8_t n);
 };
 
 #endif /* UART_H */
+
