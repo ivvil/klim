@@ -3,17 +3,31 @@
 
 #define UBRR 103
 
+#define F_CPU 16000000UL
+
+#define USART_BAUDRATE 9600 // Desired Baud Rate
+#define BAUD_PRESCALER (((F_CPU / (USART_BAUDRATE * 16UL))) - 1)
+
+#define SCL_FREQ 100000UL
+#define TWBR ((F_CPU / SCL_FREQ) - 16) / 2
+
 int main() {
-  UART::init(UBRR);
+  UART::init(BAUD_PRESCALER);
 
-  UART::puts("Hello, world!\r\n");
+  FILE uart_io;
+  fdev_setup_stream(&uart_io, UART::stream_putchar, UART::stream_getchar, _FDEV_SETUP_RW);
 
-  uint8_t bufSize = 20;
-  char buf[bufSize];
+  stdout = stdin = &uart_io;
 
-  UART::getLine(buf, bufSize);
+  UART::put_string("Hello, world!\r\n");
+  UART::put_string("UART init. Type something!\r\n");
 
-  UART::puts("You entered: ");
-  UART::puts(buf);
-  UART::puts("\r\n");
+  char buf[20];
+
+  while (true) {
+	fgets(buf, sizeof buf - 1, stdin);
+	printf("You typed: %s\n", buf);
+  }
+
 }
+	

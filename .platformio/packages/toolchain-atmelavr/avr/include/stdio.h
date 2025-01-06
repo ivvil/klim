@@ -787,7 +787,7 @@ extern int	getchar(void);
    functionality identical to fgetc().  For space constraints, in
    \c avr-libc, it is just an alias for \c fgetc.
 */
-#define getc(__stream) fgetc(__stream)
+#define get_char(__stream) fgetc(__stream)
 
 /**
    The macro \c getchar reads a character from \c stdin.  Return

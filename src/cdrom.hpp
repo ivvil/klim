@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 #include <avr/io.h>
-#include "io.cpp"
+#include "twi.hpp"
 
 class CDROM {
   const int dataL;
